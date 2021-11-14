@@ -4,11 +4,9 @@
 
 ## Modules de formations
 
-{{ $formations := (slice "parcours_r_socle_preparation_des_donnees") }}
-{{ range $formations }}
-[![{{.}}](https://github.com/jdlom/{{.}}/actions/workflows/build-bookdown.yml/badge.svg)](https://github.com/jdlom/{{.}}/actions/workflows/build-bookdown.yml)
-{{ end}}
-
+{% for formation in ["parcours_r_socle_preparation_des_donnees"]) %}
+[![{{formation}}](https://github.com/jdlom/{{formation}}/actions/workflows/build-bookdown.yml/badge.svg)](https://github.com/jdlom/{{formation}}/actions/workflows/build-bookdown.yml)
+{% endfor %}
 ## Se former à R
 
 Ce dépôt contient les supports pédagogiques de la formation R en version Rmd. Il permet aux référents R de construire et mettre à jour les modules de formation. L'outil Travis-Ci est utilisé pour compiler les fichiers Rmd en support au format HTML. Ces supports sont ensuite copiés sur la branche `gh-pages`.
