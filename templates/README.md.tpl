@@ -2,6 +2,13 @@
 
 [![Build Status](https://travis-ci.org/MTES-MCT/parcours-r.svg?branch=master)](https://travis-ci.org/MTES-MCT/parcours-r)
 
+## Modules de formations
+
+{{ $formations := (slice "parcours_r_socle_preparation_des_donnees") }}
+{{ range $formations }}
+[![{{.}}](https://github.com/jdlom/{{.}}/actions/workflows/build-bookdown.yml/badge.svg)](https://github.com/jdlom/{{.}}/actions/workflows/build-bookdown.yml)
+{{ end}}
+
 ## Se former à R
 
 Ce dépôt contient les supports pédagogiques de la formation R en version Rmd. Il permet aux référents R de construire et mettre à jour les modules de formation. L'outil Travis-Ci est utilisé pour compiler les fichiers Rmd en support au format HTML. Ces supports sont ensuite copiés sur la branche `gh-pages`.
