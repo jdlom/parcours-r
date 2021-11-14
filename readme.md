@@ -26,4 +26,3 @@ Ce dépôt contient les supports pédagogiques de la formation R en version Rmd.
 15/02/2019
 * init (modules socle et à la carte : de 1 à 5)
 * ajout d'une page index de présentation
-
