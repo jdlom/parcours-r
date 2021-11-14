@@ -3,7 +3,7 @@ name: Update README
 on:
   pull_request:
     paths:
-      - '.github/workflows/update-readme.yml
+      - '.github/workflows/update-readme.yml'
       - 'templates/README.md.tpl'
 
 jobs:
