@@ -45,7 +45,8 @@ jobs:
         $IMAGE_REPOSITORY_URL
         EOF
         gh issue create 
-          --title "Mise à jour image docker (formation sspcloud)" 
+          --title "Mise à jour image docker (formation sspcloud)"
+          --body
           --body-file body.txt
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
