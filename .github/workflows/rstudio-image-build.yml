@@ -48,7 +48,7 @@ jobs:
         
         Copier/coller : 
         
-        \`/(datalab.sspcloud.fr.\*)${GITHUB_REPOSITORY#*/}-([\w\d\.:]\*)/\` 
+        \`/(datalab.sspcloud.fr.*)${GITHUB_REPOSITORY#*/}-([\w\d\.:]*)/\` 
           
         Faire \`Entrer\`
         
