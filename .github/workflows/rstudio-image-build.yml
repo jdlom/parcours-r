@@ -44,19 +44,19 @@ jobs:
           
         https://github.com/InseeFrLab/www.sspcloud.fr/blob/main/src/lib/educationalResources/educationalResources.ts
         
-        Puis `Ctrl+Shift+f`
+        Puis \`Ctrl+Shift+f\`
         
         Copier/coller : /(datalab.sspcloud.fr.*)${GITHUB_REPOSITORY#*/}-([\w\d\.:]*)/
           
         Entrer
         
-        Remplacer : $1${GITHUB_REPOSITORY#*/}-$R_VERSION_SHA
+        Remplacer : \$1${GITHUB_REPOSITORY#*/}-$R_VERSION_SHA
         
         Entrer et choisir yes
         
         EOF
         gh issue create \
-          --title "Mise à jour image docker (formation sspcloud)" \
+          --title "Mise à jour image docker $IMAGE_REPOSITORY_URL" \
           --body-file body.txt
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
