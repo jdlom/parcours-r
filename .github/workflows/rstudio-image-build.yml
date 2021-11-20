@@ -35,17 +35,18 @@ jobs:
     - name: Open issue to change sspcloud formations
       if: ${{ github.event_name != 'pull_request' }}
       run: |
+        cat << EOF > body.txt
+        Remplacer dans le fichier :
+          
+        https://github.com/InseeFrLab/www.sspcloud.fr/blob/main/src/lib/educationalResources/educationalResources.ts
+          
+        avec la nouvelle image :
+          
+        $IMAGE_REPOSITORY_URL
+        EOF
         gh issue create 
           --title "Mise à jour image docker (formation sspcloud)" 
-          --body "
-          Remplacer dans le fichier :
-          
-          https://github.com/InseeFrLab/www.sspcloud.fr/blob/main/src/lib/educationalResources/educationalResources.ts
-          
-          avec la nouvelle image :
-          
-          $IMAGE_REPOSITORY_URL
-          "
+          --body-file body.txt
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         IMAGE_REPOSITORY_URL: ghcr.io/${{ env.IMAGE_REPOSITORY }}-${{ matrix.r_version }}:${{ github.sha }}
