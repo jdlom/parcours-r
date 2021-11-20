@@ -46,13 +46,13 @@ jobs:
         
         Puis \`Ctrl+Shift+f\`
         
-        Copier/coller : /(datalab.sspcloud.fr.*)${GITHUB_REPOSITORY#*/}-([\w\d\.:]*)/
+        Copier/coller : \`/(datalab.sspcloud.fr.\*)${GITHUB_REPOSITORY#*/}-([\w\d\.:]\*)/\` 
           
         Entrer
         
-        Remplacer : \$1${GITHUB_REPOSITORY#*/}-$R_VERSION_SHA
+        Remplacer : \`\$1${GITHUB_REPOSITORY#*/}-$R_VERSION_SHA\`
         
-        Entrer et choisir yes
+        Entrer et choisir \`yes\`
         
         EOF
         gh issue create \
