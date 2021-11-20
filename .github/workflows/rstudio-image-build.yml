@@ -34,7 +34,7 @@ jobs:
           
     - name: Open issue to change sspcloud formations
       if: ${{ github.event_name != 'pull_request' }}
-      run: gh issue create --title "Mise à jour image docker (formation sspcloud)" --body "$IMAGE_REPOSITOY_URL"
+      run: gh issue create --title "Mise à jour image docker (formation sspcloud)" --body "$IMAGE_REPOSITORY_URL"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         IMAGE_REPOSITORY_URL: ghcr.io/${{ env.IMAGE_REPOSITORY }}-${{ matrix.r_version }}:${{ github.sha }}
