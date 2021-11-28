@@ -1,0 +1,28 @@
+name: Update README
+#https://github.com/marketplace/actions/jinja2-action
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/update-readme.yml'
+      - 'templates/README.md.j2'
+
+jobs:
+  render-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Generate README.md
+        uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: templates/README.md.j2
+          output_file: readme.md
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          commit_message: Update generated README
+          branch: update-readme
